@@ -6,3 +6,4 @@ admin.site.register(Image)
 
 # Register your models here.
 # test 2 gita
+# git pull test 1
