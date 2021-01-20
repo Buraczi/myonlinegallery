@@ -6,3 +6,4 @@ def index(request):
     return HttpResponse("Index response test!")
 
 # Create your views here.
+# testing branches and marge
