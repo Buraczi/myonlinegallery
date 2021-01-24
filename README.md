@@ -1,1 +1,4 @@
 "# myonlinegallery" 
+req:
+  django
+  pillow
