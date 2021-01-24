@@ -1,4 +1,4 @@
 "# myonlinegallery" 
 req:
-  django
-  pillow
+  django,
+  pillow,
