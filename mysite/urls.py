@@ -16,7 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from gallery.views import ImagePhoto, ImagePhotoDisplay
+
 urlpatterns = [
-    path('gallery/', include('gallery.urls')),
     path('admin/', admin.site.urls),
+    path('', ImagePhoto.as_view(), name='home'),
+    path('image_photo/<int:pk>/', ImagePhotoDisplay.as_view(), name='image_photo_display'),
 ]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+if settings.DEBUG:
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
