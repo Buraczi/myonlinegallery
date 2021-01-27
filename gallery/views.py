@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect # , HttpResponse
-# from django.template import loader
+from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 from django.urls import reverse_lazy
 
