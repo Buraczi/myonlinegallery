@@ -1,3 +1,4 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
@@ -19,7 +20,7 @@ class ImagePhoto(TemplateView):
             return HttpResponseRedirect(reverse_lazy('image_photo_display', kwargs={'pk': obj.id}))
 
         context = self.get_context_data(form=form)
-        return self.render_to_response(context)     
+        return self.render_to_response(context)
 
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
@@ -30,5 +31,10 @@ from .models import Image
 class ImagePhotoDisplay(DetailView):
     model = Image
     template_name = 'gallery/image_photo_display.html'
+    context_object_name = 'image'
+
+class ImagePhotoDisplayAll(DetailView):
+    model = Image
+    template_name = 'gallery/image_photo_display_all.html'
     context_object_name = 'image'
     
