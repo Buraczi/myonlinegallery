@@ -25,7 +25,7 @@ class ImagePhoto(TemplateView):
     def get(self, request, *args, **kwargs):
         return self.post(request, *args, **kwargs)
 
-from django.views.generic import DetailView
+from django.views.generic import DetailView, ListView
 from .models import Image
 
 class ImagePhotoDisplay(DetailView):
@@ -33,8 +33,8 @@ class ImagePhotoDisplay(DetailView):
     template_name = 'gallery/image_photo_display.html'
     context_object_name = 'image'
 
-class ImagePhotoDisplayAll(DetailView):
+class ImagePhotoDisplayAll(ListView):
     model = Image
     template_name = 'gallery/image_photo_display_all.html'
-    context_object_name = 'image'
+    context_object_name = 'image_all'
     

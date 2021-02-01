@@ -1,0 +1,12 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Name</h1>
+    {% for image in image_photo_set_all%}
+    <img src="{{ image.image_photo.url }}" alt="Meme" width="250" height="250">
+    {% endfor %}
+</b>
+    <a href="{% url 'home' %}">Back</a>
+</body>
+</html>
