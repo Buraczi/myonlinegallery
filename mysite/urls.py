@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from gallery.views import ImagePhoto, ImagePhotoDisplay
+from gallery.views import ImagePhoto, ImagePhotoDisplay, ImagePhotoDisplayAll
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ImagePhoto.as_view(), name='home'),
+    path('image_photo/show_all/', ImagePhotoDisplayAll.as_view(), name='image_photo_display_all'),
     path('image_photo/<int:pk>/', ImagePhotoDisplay.as_view(), name='image_photo_display'),
 ]
 
