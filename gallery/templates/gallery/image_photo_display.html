@@ -1,10 +1,19 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head> 
+    <meta charset="UTF-8"> 
+    <title>added image display</title> 
+</head>
+
 <body>
-    <h1>Name</h1>
-    <img src="{{ image.image_photo.url }}" alt="Meme" width="250" height="250">
-</b>
-    <a href="{% url 'home' %}">Back</a>
+
+    <img src="{{ image.image_photo.url }}" alt="Meme">
+
+    <p>
+        <a href="{% url 'image_photo_display_all' %}">Back</a>
+    </p>
 </body>
+
 </html>
